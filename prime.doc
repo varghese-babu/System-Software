@@ -1,0 +1,41 @@
+LDX TWO
+LDA M
+STA VAL
+COMP TWO
+JEQ LBL1
+COMP ONE
+     JEQ LBL3
+     DIV TWO
+     STA HALF
+LOOP LDA M
+     DIV X
+     MUL X
+     STA P
+     LDA M
+     SUB P
+     COMP ZERO
+     JEQ LBL2
+     TIX HALF
+     JLT LOOP
+LBL1 LDA ONE
+     STA PRI
+     J LBL4
+LBL2 LDA ONE
+     STA NON
+     J LBL4
+LBL3 LDA ONE
+     STA NPNP
+     J LBL4
+LBL4 LDA ONE
+     STA END
+     TWO WORD 2
+     M RESW 1
+     ONE WORD 1
+     HALF RESW 1
+     VAL RESW 1
+     P RESW 1
+     ZERO WORD 0
+     PRI RESW 1
+     NON RESW 1
+     END RESW 1
+     NPNP RESW 1
