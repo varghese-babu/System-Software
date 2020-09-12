@@ -1,9 +1,9 @@
-LDX TWO
-LDA M
-STA VAL
-COMP TWO
-JEQ LBL1
-COMP ONE
+     LDX TWO
+     LDA M
+     STA VAL
+     COMP TWO
+     JEQ LBL1
+     COMP ONE
      JEQ LBL3
      DIV TWO
      STA HALF
